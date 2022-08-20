@@ -20,6 +20,11 @@
             <input type="text" class="form-control" name="password" value="{{$user->password}}">
 
         </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">password</label>
+            <input type="text" class="form-control" name="phone" value="{{$user->phone}}">
+
+        </div>
         <button type="submit" class="btn btn-primary" >Editar</button>
 
     </form>

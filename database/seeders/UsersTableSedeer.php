@@ -18,8 +18,8 @@ class UsersTableSedeer extends Seeder
         $user = User::create([
             'name' => 'michell',
             'email'=> 'michell@gmail.com',
-            'password'=> Hash::make('12345')
-
+            'password'=> Hash::make('12345'),
+            'phone'=>'3112438906'
         ]);
     }
 }

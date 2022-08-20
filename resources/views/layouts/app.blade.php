@@ -12,7 +12,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-2">
+        <div class="col-md-2">
             <div class=" dropdown ">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     usuarios
@@ -26,7 +26,19 @@
             </div>
             <br>
             <div class=" dropdown ">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-secondary  dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    productos
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item " href="{{route('products.create')}}">crear producto</a></li>
+                    <li><a class="dropdown-item" href="{{route('products.index')}}">listar productos</a></li>
+
+
+                </ul>
+            </div>
+            <br>
+            <div class=" dropdown ">
+                <button class="btn btn-secondary  dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     opciones
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -43,7 +55,7 @@
 
         </div>
 
-        <div class="col-10">
+        <div class="col-md-10">
             @yield('content')
         </div>
     </div>

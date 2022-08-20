@@ -10,18 +10,20 @@
                             @csrf
                             <h5 class="card-title">INICIAR SESION</h5>
                             <p class="card-text"><div class="input-group mb-3">
-                                <input type="email" class="form-control validate" placeholder="email" aria-label="email" name="email" required ></div></p>
+                                <input type="email" class="form-control validate" placeholder="email"  name="email" required ></div></p>
                             <div class="input-group mb-3">
-                                <input type="password" class="form-control validate" placeholder="password" aria-label="password" name="password" required>
+                                <input type="password" class="form-control validate" placeholder="password" name="password" required>
                             </div>
                             <div class="container col-md-6 offset-3">
                                 <button type="submit" class="btn btn-success">iniciar</button>
                                 <a href="{{'register'}}">registrarme</a>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
 
         </div>
 
+@endsection

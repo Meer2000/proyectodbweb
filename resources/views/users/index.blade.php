@@ -2,15 +2,15 @@
 @section('content')
 <h5>listado de usuarios</h5>
 <hr>
-
-    <table class="table">
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
         <thead>
         <tr>
-            <th scope="col">ID</th>
-            <th scope="col">NAME</th>
-            <th scope="col">EMAIL</th>
-            <th scope="col">PASSWORD</th>
-            <th scope="col">ACCION</th>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>PASSWORD</th>
+            <th>ACCION</th>
         </tr>
         </thead>
         <tbody>
@@ -20,13 +20,14 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>{{$user->password}}</td>
+            <td>{{$user->phone}}</td>
            <td>
-               <form action="{{route('users.destroy',$user->id)}}" method="post">
+               <form  action="{{route('users.destroy',$user->id)}}" method="post">
                    @csrf
                    @method('DELETE')
-                   <a class="btn btn-primary bg-success " href="{{route('users.show',$user->id)}}">Detalles</a>
-                   <a class="btn btn-primary bg-info " href="{{route('users.edit',$user->id)}}" >Editar</a>
-                   <button class="btn btn-primary bg-danger" type="submit" >Eliminar</button>
+                   <a class="btn  bg-success btn-sm " href="{{route('users.show',$user->id)}}">Detalles</a>
+                   <a class="btn  bg-info btn-sm" href="{{route('users.edit',$user->id)}}" >Editar</a>
+                   <button class="btn  bg-danger btn-sm" type="submit" >Eliminar</button>
                </form>
 
            </td>
@@ -34,4 +35,5 @@
         @endforeach
         </tbody>
     </table>
+</div>
 @endsection

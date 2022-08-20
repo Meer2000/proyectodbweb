@@ -13,21 +13,21 @@
     <div class="col-md-6 offset-3">
         <div class="card">
             <div class="card-body">
-                <form action="{{route('users.store')}}" method="post">
+                <form action="{{route('products.store')}}" method="post">
                     @csrf
-                    <h5 class="card-title">CREAR USUARIO</h5>
+                    <h5 class="card-title">CREAR PRODUCTO</h5>
                     <p class="card-text"></p>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control validate" placeholder="name" aria-label="name" name="name" required ></div>
-
+                        <input type="text" class="form-control validate" placeholder="nombres" aria-label="name" name="nombres" required ></div>
 
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control validate" placeholder="email" aria-label="email" name="email" required ></div>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control validate" placeholder="password" aria-label="password" name="password" required>
+                        <input type="number" class="form-control validate" placeholder="precio" aria-label="password" name="precio" required>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control validate" placeholder="phone" aria-label="password" name="phone" required>
+                        <textarea class="form-control validate"  rows="3" placeholder="descripcion" name="descripcion" required></textarea>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control validate" placeholder="estado"  name="estado" required>
                     </div>
 
 
@@ -36,7 +36,7 @@
 
                         </div>
                         <div class="col-2">
-                            <a  href="{{route('users.index')}}" class="btn btn-warning">regresar</a>
+                            <a  href="{{route('products.index')}}" class="btn btn-warning">regresar</a>
                         </div>
                     </div>
 

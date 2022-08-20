@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
 
-class Userscontroller extends Controller
+class Productscontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class Userscontroller extends Controller
      */
     public function index()
     {
-        $users =User::all();
-        return view('users.index',compact('users'));
+        $products =Product::all();
+        return view('products.index',compact('products'));
     }
 
     /**
@@ -27,8 +26,8 @@ class Userscontroller extends Controller
      */
     public function create()
     {
-        $users=User::all();
-        return view('users.create',compact('users'));
+        $products=Product::all();
+        return view('products.create',compact('products'));
     }
 
     /**
@@ -39,14 +38,8 @@ class Userscontroller extends Controller
      */
     public function store(Request $request)
     {
-        $user=User::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-            'phone' => $request['phone'],
-
-    ]);
-        return redirect()->route('users.show',compact('user'));
+        $product=Product::create($request->all());
+        return redirect()->route('products.show',compact('product'));
     }
 
     /**
@@ -57,8 +50,8 @@ class Userscontroller extends Controller
      */
     public function show($id)
     {
-        $user= User::find($id);
-        return view('users.show',compact('user'));
+        $product= Product::find($id);
+        return view('products.show',compact('product'));
     }
 
     /**
@@ -69,8 +62,8 @@ class Userscontroller extends Controller
      */
     public function edit($id)
     {
-        $user =User::find($id);
-        return view('users.edit',compact('user'));
+        $product =Product::find($id);
+        return view('products.edit',compact('product'));
     }
 
     /**
@@ -82,8 +75,8 @@ class Userscontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id)->update($request->all());
-        return redirect()->route('users.index');
+        $product = Product::find($id)->update($request->all());
+        return redirect()->route('products.index');
     }
 
     /**
@@ -94,7 +87,7 @@ class Userscontroller extends Controller
      */
     public function destroy($id)
     {
-        $user =User::find($id)->delete();
-        return redirect()->route('users.index');
+        $product =Product::find($id)->delete();
+        return redirect()->route('products.index');
     }
 }

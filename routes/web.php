@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Userscontroller;
+use App\Http\Controllers\Productscontroller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +16,7 @@ use App\Http\Controllers\Userscontroller;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('welcome');
 });
 
 Route::middleware([
@@ -27,9 +29,12 @@ Route::middleware([
     })->name('dashboard');
 });
 Route::redirect('dashboard','users');
-Route::resource('users',Userscontroller::class);
+
 Route::middleware(['auth:sanctum',
     config('jetstream.auth_session'),
     'verified'])->group(function (){
         Route::resource('users',Userscontroller::class);
+        Route::resource('products',Productscontroller::class);
+
     });
+
